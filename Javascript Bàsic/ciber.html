@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo</title>
+</head>
+<body>
+   <script>
+
+
+//Exercici 1
+console.log("Hola Mundo");
+
+//Exercici 2
+alert("Me llamo Joao!");
+
+
+//Exercici 3
+const nom = "Joao";
+const cognom = "Emmerich";
+console.log(`Mi nombre es ${nom} y mi apellido es ${cognom}`);
+
+//Exercici 4
+let num1 = 5;
+let num2 = 10;
+let suma = num1 + num2;
+console.log(`El primer numero es ${num1} y el segundo numero es ${num2} la suma de los dos es ${suma}`);
+
+
+//Exercici 5
+let nota_examen = 8;
+if(nota_examen <= 5){
+   alert("Una pena, no has superado el examen, tenias que sacar más de 5. Tu nota fue: " +nota_examen);
+}else if(nota_examen <= 8){
+   alert("Has superado el examen! Pero todavia puedes hacer mejor! Tu nota fue: " +nota_examen);
+}else if(nota_examen > 8){
+   alert("Enhorabuena! Eres un crack! Tu nota fue: " +nota_examen);
+}else{
+   alert("Hay un error en tu nota, verifique si es un número.");
+}
+
+//Exercici 6
+let frase = "Tinc un cotxe de color blau.";
+frase = frase.replace(/blau/,"verd");
+console.log(frase);
+frase = frase.replace(/o/ig,"u");
+console.log(frase);
+
+//Exercici 7 
+let objects = ['taula', 'cadira', 'ordinador', 'libreta'];
+for(let i = 0; i<objects.length; i++){
+   console.log(`El object ${objects[i]} està a la posiciò ${i}.`);
+}
+
+//Exercici 8 
+
+
+function calculadora(operador, valor1, valor2){
+   let result = "";
+   switch(operador){
+      case "suma":
+        result = parseInt(valor1) + parseInt(valor2);
+         break;
+      case "resta":
+        result = valor1-valor2;
+         break;
+      case "multiplicacion":
+         result = valor1 * valor2;
+         break;
+      default:
+         result = "Hay un error en el operador";      
+   }
+  console.log(`El resultado de la operación ${operador} de los valores ${valor1} y ${valor2} es : ${result}`);
+}
+
+calculadora("resta", 5, 9);
+calculadora('multiplicacion', 8,16);
+calculadora("suma", 3, 5);
+
+
+   </script>     
+</body>
+</html>
