@@ -34,7 +34,7 @@ header{
     flex-flow: column wrap;
 }
 main{
-    grid-area: c;
+   grid-area: c;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -65,7 +65,7 @@ main{
         grid-template-areas: 
         "h h h h h h h h h h h h"
         "c c c c c c c c c c c c"
-        "c c c c c c c c c c c c"
+        "a a a a a a a a a a a a"
         
     }
     
