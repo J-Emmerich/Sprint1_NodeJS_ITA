@@ -1,0 +1,133 @@
+
+ 
+ /* =========
+   Color Palette
+    #2d132c
+    #801336 
+    #c72c41
+    #ee4540
+   ========= */
+
+
+
+
+/* =========
+    Layout
+   ========= */
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: minmax(50px, auto) repeat(2, 1fr);
+    grid-gap: 20px;
+    grid-template-areas: 
+    "h h h h h h h h h h h h" 
+    "c c c c c c c c c a a a"
+    "c c c c c c c c c a a a";
+}
+
+header{
+    grid-area: h;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-flow: column wrap;
+}
+main{
+    grid-area: c;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+
+#answer{
+    grid-area: a;
+    margin-left: 20px;
+}
+
+.question{
+    display: flex;
+    justify-items: center;
+    flex-flow: column wrap;
+}
+.form-container form {
+    display: flex;
+}
+
+#exercici4{
+    flex-flow: column wrap;
+    text-align: center;
+}
+
+@media (max-width: 750px){
+    .container{
+        grid-template-areas: 
+        "h h h h h h h h h h h h"
+        "c c c c c c c c c c c c"
+        "c c c c c c c c c c c c"
+        
+    }
+    
+}
+
+/* =========
+Color and Tipography
+   ========= */
+/* =========
+   Color Palette
+    #232931
+    #393e46 
+    #4ecca3 
+    #eeeeee
+   ========= */
+
+body{
+    background-color: #232931;
+    font-family: monospace;
+    color: #eeeeee;
+}
+
+h1{
+    font-size: 40px;
+}
+h2{
+    font-size: 30px;
+}
+li{
+    font-size: 18px;
+}
+p, main li{
+    font-size: 22px;    
+}
+
+
+.button, .input{
+    font-family: monospace;
+}
+
+.button{
+    color: #eeeeee;
+}
+
+
+
+/*===========
+    Elements
+  ===========*/
+.input{
+    align-self: center;
+    padding: 10px;
+    font-size: 20px;
+}
+  .button{
+background-color: #4ecca3;
+padding: 10px;
+font-size: 30px;
+align-self: center;
+}
+
+ul{
+    list-style: none;
+    padding-left: 0px;
+}
