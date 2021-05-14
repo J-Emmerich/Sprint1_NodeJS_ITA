@@ -57,3 +57,4 @@ multiplyNumbers(x,y){
 console.log(math.addNumbers(3,5));
 console.log(math.multiplyNumbers(5,8));
 console.log(typeof math);
+

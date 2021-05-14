@@ -115,14 +115,14 @@ const getEmpleado = (id, empleados)=>{
 //Creu una altra arrow function getSalario que rebi com a paràmetre un objecte employee
 // i retorni el seu salari
 
-const getSalario = (empleado, salarios)=>{
+const getSalario = (empleado)=>{
     return new Promise((resolve, reject)=>
     {
     let salario = "No hay datos del salario de este empleado";
     
-    for(let i = 0; i<salarios.length; i++){
-        if(salarios[i].id == empleado.id){
-            salario = salarios[i];
+    for(let i = 0; i<salaries.length; i++){
+        if(salaries[i].id == empleado.id){
+            salario = salaries[i];
         }
     }
     
@@ -144,7 +144,7 @@ const getSalario = (empleado, salarios)=>{
 // qualsevol error i l'imprimeixi per consola.
 
 getEmpleado(3, employees)
-    .then((empleado)=>getSalario(empleado, salaries))
+    .then((empleado)=>getSalario(empleado))
     .then((empleado)=>{
         console.log(`El empleado ${empleado.name} tiene el id ${empleado.id}, su sueldo es de ${empleado.salary}.`)
     })
