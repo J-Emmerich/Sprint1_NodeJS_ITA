@@ -2,9 +2,27 @@
 // Exercici 1
 // Imprimir per pantalla el resultat d'una arrow function autoinvocable que sumi dos nombres.
 
-((x,y)=>{ 
-    console.log(+x + +y);
-})(7,2);
+//Versión Keep It Simple
+
+((a,b)=>{
+    nombres = +a + +b;    
+})(9,6);
+
+console.log(nombres);
+
+
+//Not simple
+let add = ((x,y)=>{
+    
+    let nombres = +x + +y;
+    return {
+        answer : function(){
+            return `El valor de la suma es ${nombres}`;}
+        }
+})(12,4);
+console.log(add.answer());
+
+
 
 
 // Nivell 2
@@ -41,20 +59,38 @@ unaPersona.decirNombre();
 // Crear una function creadora d'objectes, abstraient la definició de les classes. 
 // Invocar-amb diferents definicions.
 
-function makeObjects(newClass){
-    return new newClass();
+function Factory(){
+    if(this.constructor === Factory){
+        throw new Error ('No puedes instanciar una clase abstracta!');
+    }
+   
 }
 
-let math = makeObjects(class{
-addNumbers(x,y){
-    return +x + +y;
-}
-multiplyNumbers(x,y){
-    return +x * +y;
+Factory.create = function(){
+    throw new Error('Método abstracto!');
 }
 
-});
-console.log(math.addNumbers(3,5));
-console.log(math.multiplyNumbers(5,8));
-console.log(typeof math);
+let Draw = function(){
+    Object.create(Factory);}
+    Draw.prototype.constructor = Draw;
+    Draw.prototype.create = function(){
+        console.log( `I'm a drawing`);
+}
 
+let Write = function(){
+    Object.create(Factory);}
+Write.prototype.constructor = Write;
+Write.prototype.create = function(){
+    console.log("I'm writing");
+}
+
+
+let miDiseño = new Draw();
+miDiseño.create();
+let otroDiseño = new Draw();
+otroDiseño.create();
+
+let unEscrito = new Write();
+unEscrito.create();
+let otroEscrito = new Write();
+otroEscrito.create();
