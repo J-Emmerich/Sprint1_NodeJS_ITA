@@ -11,6 +11,8 @@
 console.log(nombres);
 
 
+
+/*
 //Not simple
 let add = ((x,y)=>{
     
@@ -21,7 +23,7 @@ let add = ((x,y)=>{
         }
 })(12,4);
 console.log(add.answer());
-
+*/
 
 
 
