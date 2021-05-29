@@ -4,11 +4,11 @@
 
 //Versión Keep It Simple
 
-((a,b)=>{
-    nombres = +a + +b;    
-})(9,6);
+console.log(((a,b)=>{
+    return +a + +b;    
+})(8,6));
 
-console.log(nombres);
+
 
 
 
@@ -73,26 +73,27 @@ Factory.create = function(){
 }
 
 let Draw = function(){
-    Object.create(Factory);}
+    Object.create(Factory);
+
+}
     Draw.prototype.constructor = Draw;
     Draw.prototype.create = function(){
         console.log( `I'm a drawing`);
 }
 
-let Write = function(){
-    Object.create(Factory);}
-Write.prototype.constructor = Write;
-Write.prototype.create = function(){
-    console.log("I'm writing");
-}
 
 
 let miDiseño = new Draw();
-miDiseño.create();
+miDiseño.precio = 1500;
+miDiseño.fecha = "Agosto de 2001";
 let otroDiseño = new Draw();
-otroDiseño.create();
+otroDiseño.terminarDiseño = function(){
+    console.log("Diseño terminado");
+};
+otroDiseño.vendido = false;
 
-let unEscrito = new Write();
-unEscrito.create();
-let otroEscrito = new Write();
-otroEscrito.create();
+
+otroDiseño.terminarDiseño();
+// miDiseño.terminarDiseño(); // Throw Error porque esta definida en la otra instancia.
+console.log(otroDiseño.precio); // Undefined porque esta definida en la otra instancia
+console.log(miDiseño.precio);
