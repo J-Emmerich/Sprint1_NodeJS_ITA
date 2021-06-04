@@ -2,29 +2,9 @@
 // Exercici 1
 // Imprimir per pantalla el resultat d'una arrow function autoinvocable que sumi dos nombres.
 
-//Versión Keep It Simple
-
 console.log(((a,b)=>{
     return +a + +b;    
 })(8,6));
-
-
-
-
-
-/*
-//Not simple
-let add = ((x,y)=>{
-    
-    let nombres = +x + +y;
-    return {
-        answer : function(){
-            return `El valor de la suma es ${nombres}`;}
-        }
-})(12,4);
-console.log(add.answer());
-*/
-
 
 
 // Nivell 2
