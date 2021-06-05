@@ -13,7 +13,9 @@ function encrypt(buffer, endFilePath){
     let encrypt = crypto.createCipheriv(algorithm, key, iv);
     
     let result = Buffer.concat([iv, encrypt.update(buffer), encrypt.final()]);
+    console.log('File encrypted: ' +endFilePath);
     fs.writeFileSync(endFilePath,result);
+    console.log('Wrote file: ' + endFilePath);
 }
 
 function encryptAndDelete(filename, endFilePath){
@@ -38,7 +40,9 @@ function decrypt(buffer,endFilePath){
     let key = "123456789123456789123456";
     const decrypt = crypto.createDecipheriv(algorithm, key, iv);
     const result = Buffer.concat([decrypt.update(buf), decrypt.final()]);
+    console.log('File decrypted: ' +endFilePath);
    fs.writeFileSync(endFilePath,result)
+   console.log('Wrote file: ' +endFilePath);
    }
    catch(error){
        console.log(error.message);

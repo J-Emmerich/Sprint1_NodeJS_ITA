@@ -29,16 +29,18 @@ function imprimirRecursiva(frase, nImpresions){
     
 function myWriteFileSync(filePath, fileContent){
     fs.writeFileSync(filePath, fileContent);
+    console.log('Wrote file.txt');
 }
 
 //Ejercicio 3
 
 function myReadFromFileSync(filePath){
     let content = fs.readFileSync(filePath,'utf8');
-    console.log(content);
+    console.log('The content of the file is: ' +content);
+    
 
 }
 
 module.exports = {
-    myWriteFileSync, myReadFromFileSync, imprimirRecursiva
+    myWriteFileSync, myReadFromFileSync, imprimirRecursivaInfinita
 }

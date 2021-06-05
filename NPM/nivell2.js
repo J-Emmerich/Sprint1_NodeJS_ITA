@@ -1,6 +1,6 @@
 
 //Dependencies ejercicio 2
-const {spawn} = require('child_process');
+const {spawn, fork} = require('child_process');
 
 //Dependencies Exercicio 1 nivel 2
 const {createReadStream, createWriteStream} = require('fs');
@@ -40,6 +40,7 @@ thisDirItems.stderr.on('data', ()=>{
     console.log("Un error ocurrió: " +data);
 })
 }
+
 
 module.exports = {
     comprimirFichero, thisDirectoryItems
